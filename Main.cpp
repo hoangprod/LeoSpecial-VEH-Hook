@@ -1,4 +1,4 @@
-﻿#include "LeoSpecial.h"
+#include "LeoSpecial.h"
 #include <time.h>
 
 void(WINAPI *o_Sleep)(DWORD dwMilliseconds) = Sleep;
@@ -6,7 +6,7 @@ void(WINAPI *o_Sleep)(DWORD dwMilliseconds) = Sleep;
 
 void hk_sleep(DWORD dwMilliseconds)
 {
-	printf("Hooked!\n");
+	printf("Hooked! Removing %d worth of sleep!\n", dwMilliseconds);
 	return;
 }
 
