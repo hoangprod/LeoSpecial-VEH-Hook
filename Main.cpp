@@ -6,7 +6,7 @@ void(WINAPI *o_Sleep)(DWORD dwMilliseconds) = Sleep;
 
 void hk_sleep(DWORD dwMilliseconds)
 {
-	printf("Hooked! Removing %d worth of sleep!\n", dwMilliseconds);
+	printf("[+] Hooked! Removing %d milliseconds worth of sleep!\n", dwMilliseconds);
 	return;
 }
 
@@ -26,7 +26,7 @@ int main()
 
 	clock_t end = clock();
 	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Time elpased is %f seconds\n", time_spent);
+	printf("[+] Time elpased is %f seconds\n", time_spent);
 
 	//Unhook
 	if (!Leo.Unhook())
@@ -40,7 +40,7 @@ int main()
 
 	end = clock();
 	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Time elpased is %f seconds\n", time_spent);
+	printf("[+] Time elpased is %f seconds\n", time_spent);
 
 
 	std::cin.get();
